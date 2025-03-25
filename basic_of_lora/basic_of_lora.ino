@@ -10,6 +10,13 @@
 // D2                                        DIO0
 /////////////////////////////////////////////////
 
+// NodeMCU esp8266 Pins                     Oled display pins
+// GND                                       GND
+// Vin                                       VCC
+// D1                                        SDA
+// D2                                        SCL
+/////////////////////////////////////////////////
+
 #include <SPI.h>
 #include <Wire.h>
 #include <LoRa.h> // Or include the appropriate library header
