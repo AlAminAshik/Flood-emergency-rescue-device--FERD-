@@ -1,4 +1,4 @@
-////////////////////Connections///////////////////
+///////////////Connections of lora//////////////////
 // NodeMCU esp8266 Pins                     SX1278 Pins
 // GND                                       GND
 // 3.3V                                      VCC
@@ -19,7 +19,7 @@
 
 #include <SPI.h>
 #include <Wire.h>
-#include <LoRa.h> // Or include the appropriate library header
+#include <LoRa.h> // Or include the appropriate library header by sandeep mistry
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
