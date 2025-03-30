@@ -41,11 +41,11 @@
 
 //   // send packet
 //   LoRa.beginPacket();
-//   LoRa.print("hello ");
+//   LoRa.print(" Count: ");
 //   LoRa.print(counter);
 //   LoRa.endPacket();
 
 //   counter++;
 
-//   delay(5000);
+//   delay(2000);
 // }
