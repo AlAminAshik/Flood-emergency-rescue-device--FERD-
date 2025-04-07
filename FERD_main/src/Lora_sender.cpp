@@ -37,6 +37,7 @@
 //   Serial.begin(115200); // Initialize serial communication for debugging
 //   Serial.println("LoRa Sender");
 
+//   //pin 2 is used as a button to send data
 //   pinMode(2, INPUT_PULLUP);
   
 //     // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
@@ -54,41 +55,31 @@
 //     while (1);
 //   }
 //   Serial.println("LoRa Initialized OK!");
+//   display.clearDisplay();           // clear the display    
+// }
 
-//   display.clearDisplay();           // clear the display
+
+// void loop() {
 //   display.setTextSize(2);          // set text size to 2
 //   display.setTextColor(SSD1306_WHITE); // set text color to white
 //   display.setCursor(0,0);          // set cursor to top left corner
 //   display.print("Press the Button!"); // print "Lora init OK!" on the display
 //   display.display();               // update the display
 
-//   while(digitalRead(2) == HIGH);
-
-//   display.clearDisplay();           // clear the display
-//   display.setTextSize(2);          // set text size to 2
-//   display.setTextColor(SSD1306_WHITE); // set text color to white
-//   display.setCursor(0,0);          // set cursor to top left corner
-//   display.print("Data Sent!"); // print "Lora init OK!" on the display
-//   display.display();               // update the display
+//   if(digitalRead(2) == LOW){
+//     display.clearDisplay();           // clear the display
+//     display.setTextSize(2);           // set text size to 2
+//     display.setTextColor(SSD1306_WHITE); // set text color to white
+//     display.setCursor(0,0);           // set cursor to top left corner
+//     display.print("Data Sent!");      // print "Lora init OK!" on the display
+//     display.display();                // update the display
 //     // send packet
 //     LoRa.beginPacket();
 //     LoRa.print(" Sending Data: ");
 //     LoRa.print(counter);
 //     LoRa.endPacket();
-    
-// }
-
-// void loop() {
-// //   Serial.print("Sending data: ");
-// //   Serial.println(counter);
-
-// //   // send packet
-// //   LoRa.beginPacket();
-// //   LoRa.print(" Sending Data: ");
-// //   LoRa.print(counter);
-// //   LoRa.endPacket();
-
-// //   counter++;
-
-// //   delay(2000);
+//     counter++;
+//     delay(1000); // wait for 1 second before sending the next packet
+//     display.clearDisplay();           // clear the display
+//   }
 // }
