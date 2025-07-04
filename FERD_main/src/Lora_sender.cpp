@@ -50,7 +50,7 @@
 //   // Initialize LoRa module
 //   LoRa.setPins(SS, RST, DI0); // Set the LoRa module's pins
   
-//   if (!LoRa.begin(915E6)) { // Or ayour desired frequency (e.g., 433MHz, 868MHz, 915MHz)
+//   if (!LoRa.begin(433E6)) { // Or ayour desired frequency (e.g., 433MHz, 868MHz, 915MHz)
 //     Serial.println("Starting LoRa failed!");
 //     while (1);
 //   }
@@ -68,15 +68,15 @@
 
 //   if(digitalRead(2) == LOW){
 //     display.clearDisplay();           // clear the display
-//     display.setTextSize(2);           // set text size to 2
+//     display.setTextSize(2);           // set text size to 1
 //     display.setTextColor(SSD1306_WHITE); // set text color to white
 //     display.setCursor(0,0);           // set cursor to top left corner
 //     display.print("Data Sent!");      // print "Lora init OK!" on the display
 //     display.display();                // update the display
 //     // send packet
 //     LoRa.beginPacket();
-//     LoRa.print(" Sending Data: ");
-//     LoRa.print(counter);
+//     LoRa.print(" Data From sender: 1");
+//     //LoRa.print(counter);
 //     LoRa.endPacket();
 //     counter++;
 //     delay(1000); // wait for 1 second before sending the next packet
