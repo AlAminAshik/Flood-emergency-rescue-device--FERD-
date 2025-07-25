@@ -16,8 +16,6 @@
 // #include <Wire.h>               // Include the Wire library for I2C communication
 // #include <Adafruit_GFX.h>       // Include the Adafruit GFX library for graphics
 // #include <Adafruit_SSD1306.h>   // Include the Adafruit SSD1306 library for OLED display
-
-// int counter = 0;
  
 // // Define LoRa module pins (adjust as needed)
 // #define SS 15  // LoRa module's SPI Slave Select (SS) pin
@@ -63,7 +61,7 @@
 //   display.setTextSize(2);          // set text size to 2
 //   display.setTextColor(SSD1306_WHITE); // set text color to white
 //   display.setCursor(0,0);          // set cursor to top left corner
-//   display.print("Press the Button!"); // print "Lora init OK!" on the display
+//   display.print("Press For Help!"); // print "Lora init OK!" on the display
 //   display.display();               // update the display
 
 //   if(digitalRead(2) == LOW){
@@ -75,10 +73,8 @@
 //     display.display();                // update the display
 //     // send packet
 //     LoRa.beginPacket();
-//     LoRa.print(" Data From sender: 1");
-//     //LoRa.print(counter);
+//     LoRa.print("S ");
 //     LoRa.endPacket();
-//     counter++;
 //     delay(1000); // wait for 1 second before sending the next packet
 //     display.clearDisplay();           // clear the display
 //   }
