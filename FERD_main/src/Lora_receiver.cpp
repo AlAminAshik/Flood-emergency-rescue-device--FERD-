@@ -38,12 +38,12 @@ int RPT_THREE_RSSI = 0; // int to store the data for each report
 
 unsigned long previousMillis = 0; // Variable to store the time of the last update
 
-String names[3] = {"A", "B", "C"};
+String names[3] = {};
 
 
-String getResult(int RPT1, int RPT2, int RPT3) {
+String getResult(int RPT1, int RPT2, int RPT3) {  //feeding the RSSI values
   int values[3] = {RPT1, RPT2, RPT3};
-  String names[3] = {"R1", "R2", "R3"};
+  String names[3] = {"R1", "R2", "R3"};     // Names for each report
 
   // Simple bubble sort
   for (int i = 0; i < 3; i++) {
@@ -74,6 +74,7 @@ void setup() {
   Serial.println(F("SSD1306 allocation failed"));
   for(;;); // Don't proceed, loop forever
   }
+  display.clearDisplay();           // clear the display
   Serial.println("Display Initialized OK!");
   
   // Initialize LoRa module
@@ -84,14 +85,6 @@ void setup() {
     while (1);
   }
   Serial.println("LoRa Initialized OK!");
-
-  display.clearDisplay();           // clear the display
-  display.setTextSize(2);          // set text size to 2
-  display.setTextColor(SSD1306_WHITE); // set text color to white
-  display.setCursor(0,0);          // set cursor to top left corner
-  display.print("Lora init SUCCESS!"); // print "Lora init OK!" on the display
-  display.clearDisplay();           // clear the display
-  display.display();               // update the display
 }
 
 
@@ -114,7 +107,7 @@ void loop() {
     }
     //extract the string part from the received data
     String txtData = receivedData.substring(0, receivedData.indexOf(' ')); // get the string part of the data
-    int RSSIData = receivedData.substring(receivedData.indexOf(' ') + 1).toInt(); // get the numeric part of the data
+    int RSSIData = receivedData.substring(receivedData.indexOf(' ') + 1).toInt(); // get the numeric part of the data and convert is to integer
 
     if(receivedData.length() > 0) { // if receivedData is not empty
 
